@@ -1,0 +1,122 @@
+
+// # iii. https://httpie.io/download
+// # iv Mongodb - npm install mongodb
+// # v. Jweb token and bycript - npm install jsonwebtoken bcryptjs
+
+
+// # INSTALLATIONS
+// # 1. install express generator - npx express-generator --no-view --git ./
+// # 2. install nodemon - npm install --save-dev nodemon
+// # 3. install EsLint - npx eslint --init
+// # 4. install dotenv - npm install dotenv
+
+
+
+// # Note: 
+// # iii. https://httpie.io/download
+// # iv Mongodb - npm install mongodb
+// # v. Jweb token and bycript - npm install jsonwebtoken bcryptjs
+
+
+
+
+
+
+// //Subscriptions Controller 
+// import Subcription from '../models/subcription.model.js'
+
+
+// export const createSubscription = async (req,res,next)=>{
+//       try {
+
+//             const sub = await Subcription.create({
+                  
+//                   ...req.body,
+//                   user: req.user._id,
+//             });
+            
+//       res.status(201).json({
+//             success:true,
+//             data: sub
+//       })
+            
+//       } catch (error) {
+//             next(error)
+//       }
+// }
+
+// export const getUserSubscriptions = async (req,res,next) =>{
+//       try {
+//             // compare the entered user with the user in the token
+//       if(req.user.id != req.params.id){
+//        const error = new Error("You are not the owner of this account")
+//        error.status = 401;
+//        throw error;
+//       }
+//       const subcription = await Subcription.find({user: req.params.id});
+//       res.status(200).json({success:true, data:subcription})
+
+//       } catch (error) {
+//             next(error)
+//       }
+// }
+
+// //subscription.routes
+// import { Router } from "express";
+// import { createSubscription, getUserSubscriptions } from "../controllers/subscription.controller.js";
+// import authorize from "../middlewares/auth.middleware.js";
+
+// const subscriptionRouter = Router();
+
+// // GET /subscriptions => get all subscriptions
+// // GET /subscriptions/:id => get subscription by id
+// // POST /subscriptions => create a new subscription
+// // PUT /subscriptions/:id => update subscription by id
+// // DELETE /subscriptions/:id => delete subscription by id   
+
+
+// subscriptionRouter.get('/', (req,res)=>{
+//       res.send({title: 'GET all subscriptions'})
+// })
+
+// subscriptionRouter.get('/user/:id', authorize, getUserSubscriptions)
+
+// subscriptionRouter.post('/', authorize, createSubscription)
+
+// export default subscriptionRouter;
+
+
+
+// //SUBSCRIPTION JSON DATA
+// {
+//       "name":"Netflix Subscription",
+//       "price":1500,
+//       "currency":"USD",
+//       "frequency":"monthly",
+//       "category":"entertainment",
+//       "startDate":"2024-02-01T00:00:00.000Z",
+//       "paymentMethod": "Credit Card"
+// }
+
+// {
+//       "name":"EASport Subscription",
+//       "price":10500,
+//       "currency":"EUR",
+//       "frequency":"yearly",
+//       "category":"technology",
+//       "startDate":"2024-02-01T00:00:00.000Z",
+//       "paymentMethod": "Credit Card"
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
