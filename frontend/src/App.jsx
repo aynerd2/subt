@@ -1,6 +1,7 @@
 // import './App.css'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
+import { Toaster } from 'react-hot-toast';
 import Home from './pages/Home'; 
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
@@ -15,6 +16,7 @@ function App() {
   return (
        <BrowserRouter>
       <AuthProvider>
+        <Toaster position="top-center" />
         <div className="min-h-screen">
           <Navbar />
           <Routes>

@@ -45,9 +45,15 @@ export const signUp = async (req, res, next) => {
             res.status(201).json({
                   success: true,
                   message: "User created successfully",
-                  data: {
+                 data: {
                         token,
-                        user: newUser[0]._id,
+                        user: {
+                              id: newUser[0]._id,
+                              name: newUser[0].name,
+                              email: newUser[0].email,
+                              createdAt: newUser[0].createdAt,
+                              updatedAt: newUser[0].updatedAt
+                        }
                   }
             })
 
@@ -84,7 +90,13 @@ export const signIn = async (req, res, next) => {
                   message: 'User signed in successfully',
                   data: {
                         token,
-                        user,
+                        user: {
+                              id: user._id,
+                              name: user.name,
+                              email: user.email,
+                              createdAt: user.createdAt,
+                              updatedAt: user.updatedAt
+                        }
                   }
             })
 

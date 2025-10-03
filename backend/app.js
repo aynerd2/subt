@@ -8,10 +8,9 @@ import errorMiddleware from './middlewares/error.middleware.js';
 import cookieParser from 'cookie-parser';
 import arcjetMiddleware from './middlewares/arcjet.middleware.js';
 import cors from 'cors'
+import dotenv from "dotenv";
 
-
-
-
+dotenv.config();
 const app = express();  
 app.use(express.json());
 app.use(errorMiddleware);

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import api from "../services/api";
+import { getUserById } from "../services/api";
 
 
 
@@ -17,8 +17,8 @@ const UserDetails = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await api.getUserById(id, token);
-        setUser(response.user || response);
+        const response = await getUserById(id);
+        setUser(response.data.data.user);
       } catch (err) {
         setError(err.message || 'Failed to fetch user details');
       } finally {
